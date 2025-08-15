@@ -1,8 +1,7 @@
-import 'package:bloc/bloc.dart';
-import 'package:meta/meta.dart';
+import '../../export.dart';
 
 part 'auth_state.dart';
 
-class AuthCubitCubit extends Cubit<AuthCubitState> {
-  AuthCubitCubit() : super(AuthCubitInitial());
+class AuthCubit extends Cubit<AuthState> {
+  AuthCubit() : super(AuthInitial());
 }
