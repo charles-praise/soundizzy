@@ -6,18 +6,18 @@ class AppView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: bottomNavigation(),
+      bottomNavigationBar: _bottomNavigation(),
     );
   }
 }
 
-List views = const [
+List _views = const [
   Discover(),
   AppSearch(),
   Marketplace(),
   Profile(),
 ];
-NavigationBar bottomNavigation() => NavigationBar(destinations: [
+NavigationBar _bottomNavigation() => NavigationBar(destinations: [
       NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
       NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
       NavigationDestination(icon: Icon(Icons.home), label: 'Home'),

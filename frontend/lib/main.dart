@@ -41,42 +41,34 @@ class Splash extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<AuthCubit, AuthState>(
-      listener: (context, state) {
-        if (state is AuthInitial) {
-          ScaffoldMessenger.of(context)
-              .showSnackBar(const SnackBar(content: Text('Loading .....')));
-        } else if (state is AuthSuccess) {
-          Navigator.pushReplacementNamed(context, '/view');
-        } else if (state is AuthError) {
-          ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(content: Text('${state.error}, please login')));
-        }
-      },
-      builder: (context, state) {
-        return Scaffold(
-          body: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Expanded(
-                child: Center(
-                  child: Text(
-                    'Soundizzy initializing .....',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 23,
-                        fontStyle: FontStyle.italic),
-                  ),
+    return Scaffold(
+      body: BlocListener<AuthCubit, AuthState>(
+        listener: (context, state) {
+          if (state is AuthSuccess) {
+            print('success');
+          }
+        },
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Expanded(
+              child: Center(
+                child: Text(
+                  'Soundizzy initializing .....',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 23,
+                      fontStyle: FontStyle.italic),
                 ),
               ),
-              LinearProgressIndicator(
-                minHeight: 10,
-                color: AppColors.LinearProgressIndicatorLightMode,
-              )
-            ],
-          ),
-        );
-      },
+            ),
+            LinearProgressIndicator(
+              minHeight: 10,
+              color: AppColors.LinearProgressIndicatorLightMode,
+            )
+          ],
+        ),
+      ),
     );
   }
 }
