@@ -1,4 +1,4 @@
-name: frontend
+name: Soundizzy
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -36,16 +36,15 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   flutter_bloc: ^9.1.1
-  assets_audio_player_web: ^3.1.1
   just_audio: ^0.9.46
   audio_service: ^0.18.17
   permission_handler: ^11.3.1
   path_provider: ^2.1.5
   audiotagger: ^2.2.1
   on_audio_query: ^2.9.0
-  equalizer_flutter: ^0.0.1
-  get_it: ^8.2.0
-  animated_bottom_navigation_bar: ^1.4.0
+
+
+
 
 dev_dependencies:
   flutter_test:
